@@ -666,7 +666,8 @@ local videoData = {
 -- Assuming 'level' object is already defined in your Lua script
 local bx = level.left
 local by = level.top
-local receiveChannel = 200
+local receiveChannel = 50
+
 local function relay(receive, send)
     local b = level:placeRelay(bx, by)
     b:setReceivingChannel(receive)
@@ -680,13 +681,20 @@ local function relay(receive, send)
 end
 
 -- Decode video data and generate relays for each frame
+local previousFrame = nil
 local frameIndex = 0
 for _, frameData in ipairs(videoData.data) do
-    for pixel in frameData:gmatch(".") do
-        if pixel == "1" then
-            relay(receiveChannel, frameIndex)
+    if frameData ~= previousFrame then
+        for pixel in frameData:gmatch(".") do
+            if pixel == "1" then
+                relay(receiveChannel, frameIndex)
+            end
+            frameIndex = frameIndex + 1
         end
-        frameIndex = frameIndex + 1
+        previousFrame = frameData
+    else
+        -- Place relay with sending channel as the duplicate frame's receive channel
+        relay(receiveChannel, receiveChannel - 1)
     end
     receiveChannel = receiveChannel + 1  -- Increment receive channel for the next frame
     frameIndex = 0  -- Reset frame index for the next frame
