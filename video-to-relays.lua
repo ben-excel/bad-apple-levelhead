@@ -666,7 +666,7 @@ local videoData = {
 -- Assuming 'level' object is already defined in your Lua script
 local bx = level.left
 local by = level.top
-local receiveChannel = 50
+local receiveChannel = (videoData.width * videoData.height) + 1
 
 local function relay(receive, send)
     local b = level:placeRelay(bx, by)
