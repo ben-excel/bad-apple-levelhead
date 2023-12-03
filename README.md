@@ -12,7 +12,7 @@ python video_conversion.py
 
 ## Video to array
 
-Converts the video to a 2-dimensional array of 1s and 0s based on the brightness of each pixel. Each frame is stored in a separate array element
+Converts the video to a 2-dimensional array with strings of 1s and 0s based on the brightness of each pixel. Each frame is stored in a separate array element.
 
 ```
 python video_to_array.py
