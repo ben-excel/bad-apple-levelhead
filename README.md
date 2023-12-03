@@ -1,6 +1,6 @@
 # Bad Apple!! in Levelhead
 
-Scripts for converting an MP4 file into a Levelhead level. This example uses the [music video](https://archive.org/details/TouhouBadApple) for the Touhou song "Bad Apple!!". The level code for the 
+Scripts for converting an MP4 file into a Levelhead level. This example uses the [music video](https://archive.org/details/TouhouBadApple) for the Touhou song "Bad Apple!!". See [this level](https://www.bscotch.net/games/levelhead/levels/69fxn67) for an example of it in use.
 
 ## Video conversion
 
