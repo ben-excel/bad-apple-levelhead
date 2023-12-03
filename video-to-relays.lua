@@ -226,7 +226,7 @@ local videoData = {
     fps = 1
 }
 
--- Assuming 'level' object is already defined in your Lua script
+-- 'level' object defined by Chaoshead
 local bx = level.left
 local by = level.top
 local receiveChannel = (videoData.width * videoData.height) + 1
@@ -263,5 +263,5 @@ for _, frameData in ipairs(videoData.data) do
         relay(receiveChannel, uniqueFrames[frameData])
     end
     receiveChannel = receiveChannel + 1  -- Increment receive channel for the next frame
-    frameIndex = 0  -- Reset frame index for the next frame
+    frameIndex = 0  -- Reset frame index
 end
