@@ -35,10 +35,13 @@ def process_video(video_filename, output_filename):
     
     # Write the brightness data into a text file
     with open(output_filename, 'w') as file:
-        for row in brightness_data:
-            file.write(f'"{row}",\n')
+        for i, row in enumerate(brightness_data):
+            if i != len(brightness_data) - 1:  # Check if it's not the last row
+                file.write(f'"{row}",\n')
+            else:
+                file.write(f'"{row}"')
 
 # Provide the filename of the video in the current directory
-video_filename = "Bad Apple (low res) 2.mp4"
-output_filename = "data3.txt"
+video_filename = "Bad Apple (low res).mp4"
+output_filename = "data.txt"
 process_video(video_filename, output_filename)
