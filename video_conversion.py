@@ -13,7 +13,7 @@ def convert_video(input_filename, output_filename):
     clip = VideoFileClip(input_path)
     
     # Resize the video to 16x12 pixels
-    resized_clip = clip.resize((8, 6))
+    resized_clip = clip.resize((16, 12))
 
     # Set the frame rate to 3 fps
     final_clip = resized_clip.set_fps(3)
@@ -22,4 +22,4 @@ def convert_video(input_filename, output_filename):
     final_clip.write_videofile(output_path, codec='libx264')
 
 # Replace 'Bad Apple.mp4' and 'Bad Apple (low res).mp4' with your file names
-convert_video('Bad Apple.mp4', 'Bad Apple (low res) 2.mp4')
+convert_video('Bad Apple.mp4', 'Bad Apple (low res).mp4')
