@@ -18,7 +18,7 @@ Converts the video to a 2-dimensional array with strings of 1s and 0s based on t
 python video_to_array.py
 ```
 
-## Video to Relays
+## Array to Relays
 
 [Chaoshead](https://github.com/tyoeer/chaoshead) script that can use the data from the converted array to make an animation sequence. Places a Relay for each pixel that has to be activated for each frame. To make it more efficient, duplicate frames are tracked and just reference the original frame.
 
