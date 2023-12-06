@@ -27,7 +27,9 @@ Note that the videoData variable should also be updated with data from the previ
 ### Playing the video
 
 Tempswitches can be used to play the video to avoid frames. Tempswitch time should be your `1/fps`, and path speed should `71*fps`.
-![Tempswitch contraption](https://web.archive.org/web/20231206221653/https://media.discordapp.net/attachments/809676310934192128/1182082032520667207/Screenshot_2023-12-06_151125.png)
+
+<img src="https://web.archive.org/web/20231206221653/https://media.discordapp.net/attachments/809676310934192128/1182082032520667207/Screenshot_2023-12-06_151125.png" width="150">
 
 This is how the video looks like for a 10x12 video played on lead blocks.
-![Video arrangement](https://web.archive.org/web/20231206221520/https://cdn.discordapp.com/attachments/809676310934192128/1182082558285058259/image1.png)
+
+<img src="https://web.archive.org/web/20231206221520/https://cdn.discordapp.com/attachments/809676310934192128/1182082558285058259/image1.png" width="150">
