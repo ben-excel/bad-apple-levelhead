@@ -24,7 +24,7 @@ python video_to_array.py
 
 Note that the videoData variable should also be updated with data from the previous script.
 
-### Playing the video
+# Playing the video
 
 Locking Tempswitches can be used to play the video. Tempswitch time should be your `1/fps`, and path speed should `71*fps`.
 
