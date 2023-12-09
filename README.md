@@ -1,6 +1,6 @@
 # Convert video files to Levelhead relays
 
-Python and [Chaoshead](https://github.com/tyoeer/chaoshead) scripts for converting an MP4 file into a Levelhead level.
+Python and [Chaoshead](https://github.com/tyoeer/chaoshead) scripts for importing an MP4 file into a Levelhead level.
 
 This example uses the [music video](https://archive.org/details/TouhouBadApple) for the Touhou song "Bad Apple!!". See [this level](https://www.bscotch.net/games/levelhead/levels/69fxn67) ([video](https://youtu.be/irKNagsKHsg)) for the end result.
 
@@ -22,7 +22,9 @@ python video_to_array.py
 
 ## Array to Relays
 
-[Chaoshead](https://github.com/tyoeer/chaoshead) script that can use the data from the converted array to make an animation sequence. Places a Relay for each pixel that has to be activated for each frame. To make it more efficient, duplicate frames are tracked and just reference the original frame.
+[Chaoshead](https://github.com/tyoeer/chaoshead) script that can use the data from the converted array to make an animation sequence. Places a Relay for each pixel that has to be activated for each frame.
+
+To make it more efficient, when duplicate frames are detected it just places a Relay that references the original frame. However, be warned this script can still place a ton of Relays depending on the video's quality and frame rate and the result may be very laggy.
 
 Note that the videoData variable should also be updated with data from the previous script.
 
@@ -35,3 +37,5 @@ Locking Tempswitches can be used to play the video. Tempswitch time should be yo
 This is how the video player could look like for a 10x12 video played on lead blocks.
 
 <img src="https://web.archive.org/web/20231206221520/https://cdn.discordapp.com/attachments/809676310934192128/1182082558285058259/image1.png" width="480">
+
+
