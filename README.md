@@ -1,6 +1,8 @@
 # Convert video files to Levelhead relays
 
-Scripts for converting an MP4 file into a Levelhead level. This example uses the [music video](https://archive.org/details/TouhouBadApple) for the Touhou song "Bad Apple!!". See [this level](https://www.bscotch.net/games/levelhead/levels/69fxn67) for an example of it in use.
+Python and [Chaoshead](https://github.com/tyoeer/chaoshead) scripts for converting an MP4 file into a Levelhead level.
+
+This example uses the [music video](https://archive.org/details/TouhouBadApple) for the Touhou song "Bad Apple!!". See [this level](https://www.bscotch.net/games/levelhead/levels/69fxn67) ([video](https://youtu.be/irKNagsKHsg)) for the end result.
 
 ## Video conversion
 
