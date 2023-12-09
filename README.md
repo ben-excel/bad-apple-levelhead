@@ -22,7 +22,7 @@ python video_to_array.py
 
 ## Array to Relays
 
-[Chaoshead](https://github.com/tyoeer/chaoshead) script that can use the data from the converted array to make an animation sequence. Places a Relay for each pixel that has to be activated for each frame.
+Lua script for [Chaoshead](https://github.com/tyoeer/chaoshead) that can use the data from the previous converted array to make an animation sequence in a level. Places a Relay for each pixel that has to be activated for each frame.
 
 To make it more efficient, when duplicate frames are detected it just places a Relay that references the original frame. However, be warned this script can still place a ton of Relays depending on the video's quality and frame rate and the result may be very laggy.
 
