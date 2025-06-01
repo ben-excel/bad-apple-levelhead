@@ -77,7 +77,6 @@ local bx = level.left
 local by = level.top
 
 -- Keep track of percussion notes that don't map to a defined type
--- THIS IS THE FIX: Declared and initialized *before* functions that use it
 local missing_percussion = {}
 
 
@@ -139,7 +138,7 @@ local function velocityToVolume(velocity)
 end
 
 -- Function to configure a boombox object
--- This function now *configures* an already placed object, it doesn't place it.
+-- This function *configures* an already placed object, it doesn't place it.
 local function configureBoombox(b, note, startDelayBeats, durationBeats, volume, isPerc)
 	local instrument -- Will hold "Melody", "Bass", or "Percussion"
 
@@ -180,7 +179,7 @@ local function configureBoombox(b, note, startDelayBeats, durationBeats, volume,
 	end
 
 	-- StartDelayBeats property expects a string "No Delay" or a number string "X.Y"
-	-- Clamp to a reasonable maximum if needed by the game engine
+	-- Clamp to a reasonable maximum
 	local maxStartDelay = 999999 -- Example limit
 	if startDelayBeats < 0 then startDelayBeats = 0 end -- Should not happen with MIDI start times
 	if startDelayBeats > maxStartDelay then
@@ -195,7 +194,7 @@ local function configureBoombox(b, note, startDelayBeats, durationBeats, volume,
 	end
 
 	-- NoteBeats property expects a string "No Note" or a number string "X.Y"
-	-- Clamp to a reasonable maximum if needed by the game engine, and handle zero duration
+	-- Clamp to a reasonable maximum, and handle zero duration
 	local maxNoteBeats = 999 -- Example limit
 	if durationBeats <= 0 then
 		b:setNoteBeats("No Note") -- Or handle very short notes differently?
@@ -243,7 +242,6 @@ local function processNoteEvent(note, startTimeTicks, durationTicks, channel, ve
 		-- Check if percussion note is mapped
 		if not midiToPerc(note) then
 			-- Add to missing list and skip placing/processing this note
-			-- THIS LINE IS NOW CORRECT because missing_percussion is defined globally
 			table.insert(missing_percussion, note)
 			-- print(string.format("Skipping unmapped percussion note: MIDI %i at beat %.2f", note, startDelayBeats)) -- Optional debug
 			return -- Skip this note
