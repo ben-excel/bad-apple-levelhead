@@ -41,8 +41,7 @@ local perc = {
 local M = require("scripts.midi") -- Example path
 
 -- Read the MIDI file from user data
--- Ensure your import.mid file is in the game's user data folder inside a 'scripts' directory
--- e.g., %appdata%/LOVE/CheeseHeist/scripts/import.mid on Windows
+-- Ensure your import.mid file is in Chaoshead's 'scripts' directory
 local raw, nRaw = love.filesystem.read("scripts/import.mid")
 
 if not raw then
@@ -164,7 +163,7 @@ local function configureBoombox(b, note, startDelayBeats, durationBeats, volume,
 	if isSharp(note) then
 		b:setSharp("Yes")
 	else
-		b:setSharp("No") -- Set explicitly to No for natural notes
+		b:setSharp("No")
 	end
 
 	-- Timing and Volume
